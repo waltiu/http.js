@@ -20,7 +20,14 @@ export default defineConfig({
       // 确保外部化处理那些你不想打包进库的依赖
       external: ['react',"react-dom"],
       plugins:[
-        typescript()
+        // https://github.com/rollup/plugins/tree/master/packages/typescript
+        typescript({
+          compilerOptions:{
+            "outDir":"dist",
+            "rootDir": "src/lib",
+            "declaration": true,
+          }
+        })
       ]
     },
   },
