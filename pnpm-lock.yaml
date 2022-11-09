@@ -1,12 +1,18 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@rollup/plugin-typescript': ^9.0.2
+  '@types/node': ^18.11.9
   '@types/react': ^18.0.22
   '@types/react-dom': ^18.0.7
   '@vitejs/plugin-react': ^2.2.0
   axios: ^1.1.3
   react: ^18.2.0
   react-dom: ^18.2.0
+  rollup-plugin-dts: ^5.0.0
+  rollup-plugin-typescript: ^1.0.1
+  rollup-plugin-typescript2: ^0.34.1
+  tslib: ^2.4.1
   typescript: ^4.6.4
   vite: ^3.2.0
 
@@ -14,13 +20,19 @@ dependencies:
   axios: 1.1.3
 
 devDependencies:
+  '@rollup/plugin-typescript': 9.0.2_tslib@2.4.1+typescript@4.8.4
+  '@types/node': 18.11.9
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.8
   '@vitejs/plugin-react': 2.2.0_vite@3.2.3
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  rollup-plugin-dts: 5.0.0_typescript@4.8.4
+  rollup-plugin-typescript: 1.0.1_tslib@2.4.1+typescript@4.8.4
+  rollup-plugin-typescript2: 0.34.1_typescript@4.8.4
+  tslib: 2.4.1
   typescript: 4.8.4
-  vite: 3.2.3
+  vite: 3.2.3_@types+node@18.11.9
 
 packages:
 
@@ -63,6 +75,8 @@ packages:
       gensync: 1.0.0-beta.2
       json5: 2.2.1
       semver: 6.3.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@babel/generator/7.20.3:
@@ -133,6 +147,8 @@ packages:
       '@babel/template': 7.18.10
       '@babel/traverse': 7.20.1
       '@babel/types': 7.20.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@babel/helper-plugin-utils/7.20.2:
@@ -176,6 +192,8 @@ packages:
       '@babel/template': 7.18.10
       '@babel/traverse': 7.20.1
       '@babel/types': 7.20.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@babel/highlight/7.18.6:
@@ -270,6 +288,8 @@ packages:
       '@babel/types': 7.20.2
       debug: 4.3.4
       globals: 11.12.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@babel/types/7.20.2:
@@ -333,6 +353,47 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
+  /@rollup/plugin-typescript/9.0.2_tslib@2.4.1+typescript@4.8.4:
+    resolution: {integrity: sha1-wM36OeJn8wb/cxZAWjVAbVgh6qc=, tarball: '@rollup/plugin-typescript/download/@rollup/plugin-typescript-9.0.2.tgz'}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^2.14.0||^3.0.0
+      tslib: '*'
+      typescript: '>=3.7.0'
+    dependencies:
+      '@rollup/pluginutils': 5.0.2
+      resolve: 1.22.1
+      tslib: 2.4.1
+      typescript: 4.8.4
+    dev: true
+
+  /@rollup/pluginutils/4.2.1:
+    resolution: {integrity: sha1-5sbDq6B0Ttzj+yB0ki03dsCvKm0=, tarball: '@rollup/pluginutils/download/@rollup/pluginutils-4.2.1.tgz'}
+    engines: {node: '>= 8.0.0'}
+    dependencies:
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+    dev: true
+
+  /@rollup/pluginutils/5.0.2:
+    resolution: {integrity: sha1-ASuPU8ceT2+csxfjEd8UBPVuejM=, tarball: '@rollup/pluginutils/download/@rollup/pluginutils-5.0.2.tgz'}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    dependencies:
+      '@types/estree': 1.0.0
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+    dev: true
+
+  /@types/estree/1.0.0:
+    resolution: {integrity: sha1-X7LlNsGum/NTZu7Yeegn+lnKQcI=, tarball: '@types/estree/download/@types/estree-1.0.0.tgz'}
+    dev: true
+
+  /@types/node/18.11.9:
+    resolution: {integrity: sha1-AtAT3nBYzqFtNhaO8vxlNGTPutQ=, tarball: '@types/node/download/@types/node-18.11.9.tgz'}
+    dev: true
+
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha1-XxnSuFqY6VWANvajysyIGUIPBc8=, tarball: '@types/prop-types/download/@types/prop-types-15.7.5.tgz'}
     dev: true
@@ -368,7 +429,9 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.20.2
       magic-string: 0.26.7
       react-refresh: 0.14.0
-      vite: 3.2.3
+      vite: 3.2.3_@types+node@18.11.9
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /ansi-styles/3.2.1:
@@ -388,6 +451,8 @@ packages:
       follow-redirects: 1.15.2
       form-data: 4.0.0
       proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
     dev: false
 
   /browserslist/4.21.4:
@@ -431,6 +496,10 @@ packages:
       delayed-stream: 1.0.0
     dev: false
 
+  /commondir/1.0.1:
+    resolution: {integrity: sha1-3dgA2gxmEnOTzKWVDqloo6rxJTs=, tarball: commondir/download/commondir-1.0.1.tgz}
+    dev: true
+
   /convert-source-map/1.9.0:
     resolution: {integrity: sha1-f6rmI1P7QhM2bQypg1jSLoNosF8=, tarball: convert-source-map/download/convert-source-map-1.9.0.tgz}
     dev: true
@@ -442,6 +511,11 @@ packages:
   /debug/4.3.4:
     resolution: {integrity: sha1-Exn2V5NX8jONMzfSzdSRS7XcyGU=, tarball: debug/download/debug-4.3.4.tgz}
     engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
     dependencies:
       ms: 2.1.2
     dev: true
@@ -635,9 +709,39 @@ packages:
     engines: {node: '>=0.8.0'}
     dev: true
 
+  /estree-walker/0.6.1:
+    resolution: {integrity: sha1-UwSRQ/QMbrkYsjZx0f4yGfOhs2I=, tarball: estree-walker/download/estree-walker-0.6.1.tgz}
+    dev: true
+
+  /estree-walker/2.0.2:
+    resolution: {integrity: sha1-UvAQF4wqTBF6d1fP6UKtt9LaTKw=, tarball: estree-walker/download/estree-walker-2.0.2.tgz}
+    dev: true
+
+  /find-cache-dir/3.3.2:
+    resolution: {integrity: sha1-swxbbv8HMHMa6pu9nb7L2AJW1ks=, tarball: find-cache-dir/download/find-cache-dir-3.3.2.tgz}
+    engines: {node: '>=8'}
+    dependencies:
+      commondir: 1.0.1
+      make-dir: 3.1.0
+      pkg-dir: 4.2.0
+    dev: true
+
+  /find-up/4.1.0:
+    resolution: {integrity: sha1-l6/n1s3AvFkoWEt8jXsW6KmqXRk=, tarball: find-up/download/find-up-4.1.0.tgz}
+    engines: {node: '>=8'}
+    dependencies:
+      locate-path: 5.0.0
+      path-exists: 4.0.0
+    dev: true
+
   /follow-redirects/1.15.2:
     resolution: {integrity: sha1-tGCGQUS6Y/JoEJbydMTlcCbaLBM=, tarball: follow-redirects/download/follow-redirects-1.15.2.tgz}
     engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
     dev: false
 
   /form-data/4.0.0:
@@ -648,6 +752,15 @@ packages:
       combined-stream: 1.0.8
       mime-types: 2.1.35
     dev: false
+
+  /fs-extra/10.1.0:
+    resolution: {integrity: sha1-Aoc8+8QITd4SfqpfmQXu8jJdGr8=, tarball: fs-extra/download/fs-extra-10.1.0.tgz}
+    engines: {node: '>=12'}
+    dependencies:
+      graceful-fs: 4.2.10
+      jsonfile: 6.1.0
+      universalify: 2.0.0
+    dev: true
 
   /fsevents/2.3.2:
     resolution: {integrity: sha1-ilJveLj99GI7cJ4Ll1xSwkwC/Ro=, tarball: fsevents/download/fsevents-2.3.2.tgz}
@@ -668,6 +781,10 @@ packages:
   /globals/11.12.0:
     resolution: {integrity: sha1-q4eVM4hooLq9hSV1gBjCp+uVxC4=, tarball: globals/download/globals-11.12.0.tgz}
     engines: {node: '>=4'}
+    dev: true
+
+  /graceful-fs/4.2.10:
+    resolution: {integrity: sha1-FH06AG2kyjzhRyjHrvwofDZ9emw=, tarball: graceful-fs/download/graceful-fs-4.2.10.tgz}
     dev: true
 
   /has-flag/3.0.0:
@@ -704,6 +821,21 @@ packages:
     hasBin: true
     dev: true
 
+  /jsonfile/6.1.0:
+    resolution: {integrity: sha1-vFWyY0eTxnnsZAMJTrE2mKbsCq4=, tarball: jsonfile/download/jsonfile-6.1.0.tgz}
+    dependencies:
+      universalify: 2.0.0
+    optionalDependencies:
+      graceful-fs: 4.2.10
+    dev: true
+
+  /locate-path/5.0.0:
+    resolution: {integrity: sha1-Gvujlq/WdqbUJQTQpno6frn2KqA=, tarball: locate-path/download/locate-path-5.0.0.tgz}
+    engines: {node: '>=8'}
+    dependencies:
+      p-locate: 4.1.0
+    dev: true
+
   /loose-envify/1.4.0:
     resolution: {integrity: sha1-ce5R+nvkyuwaY4OffmgtgTLTDK8=, tarball: loose-envify/download/loose-envify-1.4.0.tgz}
     hasBin: true
@@ -711,11 +843,25 @@ packages:
       js-tokens: 4.0.0
     dev: true
 
+  /lru-cache/6.0.0:
+    resolution: {integrity: sha1-bW/mVw69lqr5D8rR2vo7JWbbOpQ=, tarball: lru-cache/download/lru-cache-6.0.0.tgz}
+    engines: {node: '>=10'}
+    dependencies:
+      yallist: 4.0.0
+    dev: true
+
   /magic-string/0.26.7:
     resolution: {integrity: sha1-yvfa9hs06ZgvgijEUnR02siYHW8=, tarball: magic-string/download/magic-string-0.26.7.tgz}
     engines: {node: '>=12'}
     dependencies:
       sourcemap-codec: 1.4.8
+    dev: true
+
+  /make-dir/3.1.0:
+    resolution: {integrity: sha1-QV6WcEazp/HRhSd9hKpYIDcmoT8=, tarball: make-dir/download/make-dir-3.1.0.tgz}
+    engines: {node: '>=8'}
+    dependencies:
+      semver: 6.3.0
     dev: true
 
   /mime-db/1.52.0:
@@ -744,12 +890,48 @@ packages:
     resolution: {integrity: sha1-inCIxjpV5JOEVoPr88go2MUcVQM=, tarball: node-releases/download/node-releases-2.0.6.tgz}
     dev: true
 
+  /p-limit/2.3.0:
+    resolution: {integrity: sha1-PdM8ZHohT9//2DWTPrCG2g3CHbE=, tarball: p-limit/download/p-limit-2.3.0.tgz}
+    engines: {node: '>=6'}
+    dependencies:
+      p-try: 2.2.0
+    dev: true
+
+  /p-locate/4.1.0:
+    resolution: {integrity: sha1-o0KLtwiLOmApL2aRkni3wpetTwc=, tarball: p-locate/download/p-locate-4.1.0.tgz}
+    engines: {node: '>=8'}
+    dependencies:
+      p-limit: 2.3.0
+    dev: true
+
+  /p-try/2.2.0:
+    resolution: {integrity: sha1-yyhoVA4xPWHeWPr741zpAE1VQOY=, tarball: p-try/download/p-try-2.2.0.tgz}
+    engines: {node: '>=6'}
+    dev: true
+
+  /path-exists/4.0.0:
+    resolution: {integrity: sha1-UTvb4tO5XXdi6METfvoZXGxhtbM=, tarball: path-exists/download/path-exists-4.0.0.tgz}
+    engines: {node: '>=8'}
+    dev: true
+
   /path-parse/1.0.7:
     resolution: {integrity: sha1-+8EUtgykKzDZ2vWFjkvWi77bZzU=, tarball: path-parse/download/path-parse-1.0.7.tgz}
     dev: true
 
   /picocolors/1.0.0:
     resolution: {integrity: sha1-y1vcdP8/UYkiNur3nWi8RFZKuBw=, tarball: picocolors/download/picocolors-1.0.0.tgz}
+    dev: true
+
+  /picomatch/2.3.1:
+    resolution: {integrity: sha1-O6ODNzNkbZ0+SZWUbBNlpn+wekI=, tarball: picomatch/download/picomatch-2.3.1.tgz}
+    engines: {node: '>=8.6'}
+    dev: true
+
+  /pkg-dir/4.2.0:
+    resolution: {integrity: sha1-8JkTPfft5CLoHR2ESCcO6z5CYfM=, tarball: pkg-dir/download/pkg-dir-4.2.0.tgz}
+    engines: {node: '>=8'}
+    dependencies:
+      find-up: 4.1.0
     dev: true
 
   /postcss/8.4.18:
@@ -796,6 +978,52 @@ packages:
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
 
+  /rollup-plugin-dts/5.0.0_typescript@4.8.4:
+    resolution: {integrity: sha1-1kXyIupvfWt9236pjEWg5aOlaew=, tarball: rollup-plugin-dts/download/rollup-plugin-dts-5.0.0.tgz}
+    engines: {node: '>=v14'}
+    peerDependencies:
+      rollup: ^3.0.0
+      typescript: ^4.1
+    dependencies:
+      magic-string: 0.26.7
+      typescript: 4.8.4
+    optionalDependencies:
+      '@babel/code-frame': 7.18.6
+    dev: true
+
+  /rollup-plugin-typescript/1.0.1_tslib@2.4.1+typescript@4.8.4:
+    resolution: {integrity: sha1-hlZQM7cUw9Hzq6UQqtPcUZ9wkek=, tarball: rollup-plugin-typescript/download/rollup-plugin-typescript-1.0.1.tgz}
+    deprecated: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-typescript.
+    peerDependencies:
+      tslib: '*'
+      typescript: '>=2.1.0'
+    dependencies:
+      resolve: 1.22.1
+      rollup-pluginutils: 2.8.2
+      tslib: 2.4.1
+      typescript: 4.8.4
+    dev: true
+
+  /rollup-plugin-typescript2/0.34.1_typescript@4.8.4:
+    resolution: {integrity: sha1-xFfxVacdEzwUJokhP854aU4w0L4=, tarball: rollup-plugin-typescript2/download/rollup-plugin-typescript2-0.34.1.tgz}
+    peerDependencies:
+      rollup: '>=1.26.3'
+      typescript: '>=2.4.0'
+    dependencies:
+      '@rollup/pluginutils': 4.2.1
+      find-cache-dir: 3.3.2
+      fs-extra: 10.1.0
+      semver: 7.3.8
+      tslib: 2.4.1
+      typescript: 4.8.4
+    dev: true
+
+  /rollup-pluginutils/2.8.2:
+    resolution: {integrity: sha1-cvKvB0i1kjZNvTOJ5gDlqURKNR4=, tarball: rollup-pluginutils/download/rollup-pluginutils-2.8.2.tgz}
+    dependencies:
+      estree-walker: 0.6.1
+    dev: true
+
   /rollup/2.79.1:
     resolution: {integrity: sha1-vt7o+u98n5OiZHrAEIdI9Jfwgcc=, tarball: rollup/download/rollup-2.79.1.tgz}
     engines: {node: '>=10.0.0'}
@@ -813,6 +1041,14 @@ packages:
   /semver/6.3.0:
     resolution: {integrity: sha1-7gpkyK9ejO6mdoexM3YeG+y9HT0=, tarball: semver/download/semver-6.3.0.tgz}
     hasBin: true
+    dev: true
+
+  /semver/7.3.8:
+    resolution: {integrity: sha1-B6eP6vs/ezI0fXJeM95+Ki32d5g=, tarball: semver/download/semver-7.3.8.tgz}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
     dev: true
 
   /source-map-js/1.0.2:
@@ -841,10 +1077,19 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  /tslib/2.4.1:
+    resolution: {integrity: sha1-DQv7qsKIC5HiLfB2jlW+l1OlsX4=, tarball: tslib/download/tslib-2.4.1.tgz}
+    dev: true
+
   /typescript/4.8.4:
     resolution: {integrity: sha1-xGSryhWWaVl75flriUNQCyOOYOY=, tarball: typescript/download/typescript-4.8.4.tgz}
     engines: {node: '>=4.2.0'}
     hasBin: true
+    dev: true
+
+  /universalify/2.0.0:
+    resolution: {integrity: sha1-daSYTv7cSwiXXFrrc/Uw0C3yVxc=, tarball: universalify/download/universalify-2.0.0.tgz}
+    engines: {node: '>= 10.0.0'}
     dev: true
 
   /update-browserslist-db/1.0.10_browserslist@4.21.4:
@@ -858,7 +1103,7 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /vite/3.2.3:
+  /vite/3.2.3_@types+node@18.11.9:
     resolution: {integrity: sha1-emjZ73Pv9+5twHGK01B638hpRKc=, tarball: vite/download/vite-3.2.3.tgz}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -869,11 +1114,29 @@ packages:
       stylus: '*'
       sugarss: '*'
       terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
     dependencies:
+      '@types/node': 18.11.9
       esbuild: 0.15.13
       postcss: 8.4.18
       resolve: 1.22.1
       rollup: 2.79.1
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /yallist/4.0.0:
+    resolution: {integrity: sha1-m7knkNnA7/7GO+c1GeEaNQGaOnI=, tarball: yallist/download/yallist-4.0.0.tgz}
     dev: true

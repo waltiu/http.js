@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-export const onFulfilled = (response) => {
+export const onFulfilled = (response:any) => {
   return response;
 };
 
 // 请求配置设置retry后支持失败重试
-export const onRejected = (res) => {
+export const onRejected = (res:any) => {
   if (res && res.config) {
     const { config } = res;
     // 如果配置不存在或重试属性未设置，抛出promise错误

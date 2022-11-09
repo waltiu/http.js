@@ -13,7 +13,7 @@ const changeRequestLoading = () => {
   }
 };
 
-export const startRequest = (config) => {
+export const startRequest = (config:any) => {
   // 此请求不使用loading
   if (config && config.ignoreLoading) {
     return;
@@ -31,7 +31,7 @@ export const startRequest = (config) => {
   }, START_DELAY_TIME);
 };
 
-export const endRequest = (config) => {
+export const endRequest = (config:any) => {
   if (config) {
     // 此请求不使用loading
     if (config.ignoreLoading) {
@@ -48,21 +48,21 @@ export const endRequest = (config) => {
   }, END_DELAY_TIME);
 };
 
-export const onRequestFulfilled = (config) => {
+export const onRequestFulfilled = (config:any) => {
   startRequest(config);
   return config;
 };
 
-export const onRequestRejected = (error) => {
+export const onRequestRejected = (error:any) => {
   return Promise.reject(error);
 };
 
-export const onResponseFulfilled = (response) => {
+export const onResponseFulfilled = (response:any) => {
   endRequest(response && response.config);
   return response;
 };
 
-export const onResponseRejected = (error) => {
+export const onResponseRejected = (error:any) => {
   // 被abort的请求，无法获取config，同时不需要计入loading统计
   if(error.code!=="ERR_CANCELED"){
     endRequest(error && error.config);

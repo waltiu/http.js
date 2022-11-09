@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import httpRequest from "../lib/init";
+import {httpInit} from "../lib";
 import "./index.css";
 
-httpRequest.init("", {
+httpInit({}, {
   retry:1,
-  abortable:true,
+  // abortable:true,
   changeLoadingStatus(loading) {
     console.log(loading);
   },

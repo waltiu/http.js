@@ -1,10 +1,8 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 import "./interceptors";
-import HttpRequest from "./init";
-import { AxiosConfigType } from "./types";
-import {processUrl } from "./utils";
-
-export const httpConfig=HttpRequest
+import httpConfig from "./init";
+import { AxiosConfigType, AxiosCustomConfigType } from "./types";
+import { processUrl } from "./utils";
 
 // @ts-ignore
 axios.defaults = {
@@ -12,29 +10,37 @@ axios.defaults = {
 };
 
 const sendRequest = (
-  method: string,
+  method: any,
   url: string,
   params?: any,
-  config: AxiosConfigType={}
+  config: AxiosConfigType = {}
 ) => {
   return axios({
     method,
     url: processUrl(url),
     data: params,
-    ...httpConfig.custom,
+    ...httpConfig.custom||{},
     ...config,
   });
 };
 
-export default {
-  get: (url: string, params?: any, config?: AxiosConfigType) => {
-    return new Promise((resolve) => {
-      sendRequest("get", url, params, config).then(resolve).catch(resolve);
-    });
-  },
-  post: (url: string, params?: any, config?: AxiosConfigType) => {
-    return new Promise((resolve) => {
-      sendRequest("post", url, params, config).then(resolve).catch(resolve);
-    });
-  },
+export const httpGet = (url: string, params?: any, config?: AxiosConfigType) => {
+  return new Promise((resolve) => {
+    sendRequest("get", url, params, config).then(resolve).catch(resolve);
+  });
 };
+
+export const httpPost = (url:string, params?: any, config?: AxiosConfigType) => {
+  return new Promise((resolve) => {
+    sendRequest("post", url, params, config).then(resolve).catch(resolve);
+  });
+};
+
+export const httpInit = (system:AxiosRequestConfig ={}, custom: AxiosCustomConfigType ={})=>httpConfig.init(system,custom);
+
+export default {
+  httpGet,
+  httpPost,
+  httpInit,
+};
+

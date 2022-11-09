@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import http from '../lib'
+import {httpPost} from '../lib'
 import './App.css'
 
 function App() {
   const requestData=()=>{
-    http.post('22',{name:1},{
+  httpPost('22',{name:1},{
     })
   }
   return (

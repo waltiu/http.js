@@ -13,17 +13,18 @@ class HttpRequest {
     this.custom = custom;
   }
 
-  init(system: AxiosRequestConfig | "", custom: AxiosCustomConfigType | "") {
+  init(system: AxiosRequestConfig , custom: AxiosCustomConfigType ) {
     if (typeof system === "object") {
       this.system = {
-        ...this.system,
+        ...(this.system||{}),
         ...(system || {}),
       };
     }
 
     if (typeof custom === "object") {
+      console.log(this,'this')
       this.custom = {
-        ...this.custom,
+        ...(this.custom||{}),
         ...(custom || {}),
       };
     }
