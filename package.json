@@ -6,7 +6,7 @@
   "files": [
     "lib"
   ],
-  "types": "",
+  "types": "./dist/lib/index.d.ts",
   "scripts": {
     "start": "vite",
     "build": " vite build",
