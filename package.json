@@ -1,12 +1,12 @@
 {
   "name": "@waltiu/http",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./lib/index.ts",
   "module": "./lib/index.ts",
   "files": [
     "lib"
   ],
-  "types": "./dist/lib/index.d.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "start": "vite",
     "build": " vite build",

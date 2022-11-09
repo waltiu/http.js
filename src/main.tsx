@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import {httpInit} from "../lib";
+import {httpInit} from "./lib";
 import "./index.css";
 
 httpInit({}, {

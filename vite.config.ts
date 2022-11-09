@@ -11,7 +11,7 @@ export default defineConfig({
     target: "es2015",
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: resolvePath('lib/index.ts'),
+      entry: resolvePath('src/lib/index.ts'),
       name: 'http',
       // the proper extensions will be added
       fileName: 'index'
