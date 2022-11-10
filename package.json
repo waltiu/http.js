@@ -1,8 +1,8 @@
 {
   "name": "@waltiu/http",
   "version": "0.0.3",
-  "main": "./lib/index.ts",
-  "module": "./lib/index.ts",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.mjs",
   "files": [
     "dist"
   ],
