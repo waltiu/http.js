@@ -16,3 +16,11 @@ export type PeddingKeyDataType={
   requestUrl:string,
   abort:any
 }
+
+export type JsonpOptioins = {
+  param?: string;
+  timeout?: number;
+  prefix?: string;
+  name?: string;
+  ignoreLoading?:boolean
+};

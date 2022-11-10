@@ -1,13 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import {httpPost} from './lib'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import { jsonp } from "./lib";
+import "./App.css";
 
 function App() {
-  const requestData=()=>{
-  httpPost('22',{name:1},{
-    })
-  }
+  const requestData = async () => {
+  const result=  await jsonp(`https://www.baidu.com/sugrec?prod=pc&wd=2222`);
+  console.log(result,'result')
+  };
   return (
     <div className="App">
       <div>
@@ -20,9 +20,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() =>requestData()}>
-          测试请求
-        </button>
+        <button onClick={() => requestData()}>测试请求</button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
@@ -31,7 +29,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
