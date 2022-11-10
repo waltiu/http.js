@@ -1,6 +1,6 @@
 {
   "name": "@waltiu/http",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./lib/index.ts",
   "module": "./lib/index.ts",
   "files": [
