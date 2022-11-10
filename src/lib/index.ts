@@ -65,7 +65,7 @@ export const httpInit = (system:AxiosRequestConfig ={}, custom: AxiosCustomConfi
 export default {
   httpGet,
   httpPost,
-  jsonp:jsonp,
+  jsonp,
   httpInit,
 };
 
